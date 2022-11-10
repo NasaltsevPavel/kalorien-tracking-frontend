@@ -1,7 +1,9 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Kalorien Tracker"/>
+    <HelloWorld msg1="Kalorien"/>
+    <HelloWorld msg2="Tracker"/>
+
   </div>
 </template>
 <style>
