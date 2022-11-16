@@ -1,13 +1,17 @@
 <template>
+  <NavbarStart></NavbarStart>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg1="Kalorien"/>
-    <HelloWorld msg2="Tracker"/>
+    <h1 class="text">Kalorien</h1>
+    <h1 class="text1">Tracker</h1>
     <a href="/about"><button class="bn632-hover bn24">Get Started</button></a>
 
   </div>
 </template>
 <style>
+.home {
+  font-family: "Arial Black";
+}
 img {
   width: 400px;
   height: 400px;
@@ -22,7 +26,7 @@ img:hover{
 
 .bn632-hover {
   width: 160px;
-  font-size: 16px;
+  font-size: 16.5px;
   font-weight: 600;
   color: #fff;
   -webkit-text-stroke: 0.5px black;
@@ -60,15 +64,46 @@ img:hover{
   );
   box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
 }
+.text{
+  margin-top: -50px;
+  text-transform: uppercase;
+
+  font-size: 5rem;
+  background-image: url("../assets/gip2.gif");
+  background-size: cover;
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-filter: drop-shadow(6px 6px 5px #000000);
+  filter: drop-shadow(6px 6px 5px #000000);
+  -webkit-text-stroke: 0.75px white;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.6s;
+}
+.text1{
+  margin-top: -25px ;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+
+  font-size: 4rem;
+  background-image: url("../assets/gip2.gif");
+  background-size: cover;
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-filter: drop-shadow(6px 6px 5px #000000);
+  filter: drop-shadow(6px 6px 5px #000000);
+  -webkit-text-stroke: 0.75px white;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.6s;
+}
 </style>
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import NavbarStart from '@/components/NavbarStart'
 
 export default {
   name: 'HomeView',
-  components: {
-    HelloWorld
-  }
+  components: { NavbarStart }
 }
 </script>
