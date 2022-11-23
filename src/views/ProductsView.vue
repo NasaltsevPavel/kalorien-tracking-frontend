@@ -12,14 +12,15 @@
       </div>
     </div>
   </div>
-
+<ProductCreateForm></ProductCreateForm>
 </template>
 
 <script>
 import NavBar from '@/components/NavBar'
+import ProductCreateForm from '@/components/ProductCreateForm'
 export default {
   name: 'ProductsView',
-  components: { NavBar },
+  components: { ProductCreateForm, NavBar },
   data () {
     return {
       products: []

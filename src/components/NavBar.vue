@@ -8,8 +8,14 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <router-link class="nav-link" to="/">Home</router-link>
-          <router-link class="nav-link" to="/products">Products</router-link>
+          <router-link class="nav-link" to="/main">Home</router-link>
+          <li class="nav-item dropdown">
+          <router-link class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" to="/products">Products</router-link>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item"><router-link class="nav-link" to="/products">All products</router-link></a></li>
+              <li><a class="dropdown-item"><router-link class="nav-link" to="/createproduct">Create new product</router-link></a></li>
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
