@@ -1,7 +1,7 @@
 <template>
   <NavbarStart></NavbarStart>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+    <img class="logo" alt="Vue logo" src="../assets/logo.png">
     <h1 class="text">Kalorien</h1>
     <h1 class="text1">Tracker</h1>
     <a href="/about"><button class="bn632-hover bn24">Get Started</button></a>
@@ -12,7 +12,7 @@
 .home {
   font-family: "Arial Black";
 }
-img {
+.logo {
   width: 400px;
   height: 400px;
   -webkit-filter: drop-shadow(3px 6px 7px #000);
@@ -20,7 +20,7 @@ img {
   transition: transform 0.6s;
 }
 
-img:hover{
+.logo:hover{
   transform: scale(1.3);
 }
 

@@ -15,7 +15,6 @@
 
 <script>
 import NavbarStart from '@/components/NavbarStart'
-
 export default {
   name: 'App',
   // eslint-disable-next-line vue/no-unused-components
@@ -30,7 +29,6 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
-
 .container{
   margin-top: 250px ;
 }
