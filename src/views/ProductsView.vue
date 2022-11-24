@@ -1,5 +1,4 @@
 <template>
-  <NavBar></NavBar>
   <h1>Welcome to Products</h1>
   <div class="row row-cols-1 row-cols-md-4 g-4">
     <div class="col" v-for="product in products" :key="product.id">
@@ -16,18 +15,18 @@
 </template>
 
 <script>
-import NavBar from '@/components/NavBar'
 import ProductCreateForm from '@/components/ProductCreateForm'
 export default {
   name: 'ProductsView',
-  components: { ProductCreateForm, NavBar },
+  components: { ProductCreateForm },
+  props: ['mode'],
   data () {
     return {
       products: []
     }
   },
   methods: {
-    getAvatar (product) {
+    getAvatar (product, mode) {
       if (product.type === 'MEAT') {
         return require('../assets/products/meat.png')
       }
@@ -79,5 +78,12 @@ h1{
   margin-right: 0px;
   margin-left: 5px;
   margin-top: 20px;
+}
+.dark .card-body {
+  background: #160519;
+}
+
+.dark .card {
+  background: #160519;
 }
 </style>

@@ -1,38 +1,76 @@
 <template>
-  <nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Kalorien Tracker</a>
+  <header>
+    <nav>
+      <h1 class="brand">Kalorien Tracker</h1>
+      <router-link class="nav-link" to="/main">Home</router-link>
+      <router-link class="nav-link" to="/main">Home</router-link>
+      <router-link class="nav-link" v-bind:mode="mode" to="/products">Products</router-link>
+      <div class="switch">  <Toggle :mode="mode" @toggle="$emit('toggle')"></Toggle></div>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <router-link class="nav-link" to="/main">Home</router-link>
-          <li class="nav-item dropdown">
-          <router-link class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" to="/products">Products</router-link>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item"><router-link class="nav-link" to="/products">All products</router-link></a></li>
-              <li><a class="dropdown-item"><router-link class="nav-link" to="/createproduct">Create new product</router-link></a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 </template>
 
 <script>
+import Toggle from '@/components/Toggle'
 export default {
-  name: 'NavBar'
+  name: 'NavBar',
+  components: { Toggle },
+  props: ['mode']
 }
+
 </script>
 
 <style scoped>
-.navbar .navbar-brand{
-  color: #94128A;
-  font-size: 25px;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 25px;
+  height: 70px;
+  background: #C3C3C3;
+  transition: background 0.3s ease-in-out;
+}
 
+.dark header  {
+  background: #160519 ;
+}
+
+.brand {
+  color: #852d91;;
+}
+
+.dark .brand {
+  color: white;
+}
+.switch {
+  margin-top: 10px;
+  margin-left: 900px;
+}
+
+.brand {
+  font-size: 32px;
+  margin-top: 7px;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+nav {
+  display: flex;
+  height: 60px;
+}
+
+header nav .nav-link {
+  display: flex;
+  align-items: center;
+  padding:  0px 15px;
+}
+
+header nav .nav-link:hover {
+  background: #B0B0B0;
+}
+
+.dark header nav .nav-link:hover{
+  background: #22062e;
 }
 
 </style>

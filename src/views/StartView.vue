@@ -1,11 +1,9 @@
 <template>
-  <NavbarStart></NavbarStart>
   <div class="home">
-    <img class="logo" alt="Vue logo" src="../assets/logo.png">
+    <img class="logo" alt="Logo" src="../assets/logo.png">
     <h1 class="text">Kalorien</h1>
     <h1 class="text1">Tracker</h1>
     <a href="/about"><button class="bn632-hover bn24">Get Started</button></a>
-
   </div>
 </template>
 <style>
@@ -18,6 +16,12 @@
   -webkit-filter: drop-shadow(3px 6px 7px #000);
   filter: drop-shadow(3px 6px 7px #000000);
   transition: transform 0.6s;
+  animation: 3s show ease;
+}
+
+@keyframes show {
+  from { opacity: 0;}
+  to { opacity: 1;}
 }
 
 .logo:hover{
@@ -40,6 +44,7 @@
   -o-transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
+  animation: 3s show ease;
 }
 
 .bn632-hover:hover {
@@ -79,6 +84,7 @@
   -webkit-text-stroke: 0.75px white;
   -webkit-text-fill-color: transparent;
   transition: transform 0.6s;
+  animation: 3s show ease;
 }
 .text1{
   margin-top: -25px ;
@@ -96,14 +102,12 @@
   -webkit-text-stroke: 0.75px white;
   -webkit-text-fill-color: transparent;
   transition: transform 0.6s;
+  animation: 3s show ease;
 }
 </style>
 <script>
 // @ is an alias to /src
-import NavbarStart from '@/components/NavbarStart'
-
 export default {
-  name: 'HomeView',
-  components: { NavbarStart }
+  name: 'HomeView'
 }
 </script>
