@@ -1,17 +1,37 @@
 <template>
-  <h1>Welcome to Products</h1>
-  <div class="row row-cols-1 row-cols-md-4 g-4">
-    <div class="col" v-for="product in products" :key="product.id">
-      <div class="card" >
-        <img :src="getAvatar(product)" class="card-img-top" :alt="product.name">
-        <div class="card-body">
-          <h5 class="card-title">{{ product.name }}</h5>
-          <p class="card-text">{{ product.name }} hat {{ product.kcal }} Kcal</p>
+  <div class="pr" v-if="language === 'en'">
+    <h1>Welcome to Products</h1>
+    <div class="productstext"><h5>On this page you can find information about all products.</h5>
+      <h5> You can also add new products. Use the button "Create new product" on the end of this page.</h5></div>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+      <div class="col" v-for="product in products" :key="product.id">
+        <div class="card" >
+          <img :src="getAvatar(product)" class="card-img-top" :alt="product.name">
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.name }} has {{ product.kcal }} calories</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
-<ProductCreateForm></ProductCreateForm>
+  <div class="pr" v-if="language === 'de'">
+    <h1>Willkommen auf der Produktseite</h1>
+    <div class="productstext"><h5>Auf dieser Seite finden Sie Informationen zu allen Produkten.</h5>
+      <h5> Sie können auch neue Produkte hinzufügen. Verwenden Sie den Button "Neues Produkt erstellen" am Ende dieser Seite.</h5></div>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+      <div class="col" v-for="product in products" :key="product.id">
+        <div class="card" >
+          <img :src="getAvatar(product)" class="card-img-top" :alt="product.name">
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.name }} has {{ product.kcal }} calories</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<ProductCreateForm v-bind:mode="mode" v-bind:language="language" ></ProductCreateForm>
 </template>
 
 <script>
@@ -19,14 +39,14 @@ import ProductCreateForm from '@/components/ProductCreateForm'
 export default {
   name: 'ProductsView',
   components: { ProductCreateForm },
-  props: ['mode'],
+  props: ['mode', 'language'],
   data () {
     return {
       products: []
     }
   },
   methods: {
-    getAvatar (product, mode) {
+    getAvatar (product) {
       if (product.type === 'MEAT') {
         return require('../assets/products/meat.png')
       }
@@ -64,6 +84,10 @@ export default {
 </script>
 
 <style scoped>
+.productstext {
+margin-top: 30px;
+  margin-bottom: 30px;
+}
 .card {
   transition: transform 0.6s;
 }
@@ -85,5 +109,14 @@ h1{
 
 .dark .card {
   background: #160519;
+}
+
+.pr {
+  animation: 3s show ease;
+}
+
+@keyframes show {
+  from { opacity: 0;}
+  to { opacity: 1;}
 }
 </style>

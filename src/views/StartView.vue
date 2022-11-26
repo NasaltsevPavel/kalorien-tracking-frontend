@@ -72,7 +72,6 @@
 .text{
   margin-top: -50px;
   text-transform: uppercase;
-
   font-size: 5rem;
   background-image: url("../assets/gip2.gif");
   background-size: cover;

@@ -1,44 +1,81 @@
 <template>
-  <div class="fixed-bottom"><a href="/" class="bn13" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+  <div v-if="language === 'en'">
+    <div class="fixed-bottom"><a href="/" class="bn13" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
     Create new product</a></div>
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas text</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      <p>Text</p>
-      <div class="input-group mb-2">
-        <span class="input-group-text" id="product-name">Name</span>
-        <input type="text" class="form-control" v-model="name" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas text</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-      <div class="input-group mb-2">
-        <span class="input-group-text" id="product-kcal">Kcal</span>
-        <input type="number" class="form-control" v-model="kcal" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <div class="offcanvas-body">
+        <p>Text</p>
+        <div class="input-group mb-2">
+          <span class="input-group-text" id="product-name">Name</span>
+          <input type="text" class="form-control" v-model="name" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-2">
+          <span class="input-group-text" id="product-kcal">Kcal</span>
+          <input type="number" class="form-control" v-model="kcal" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-2">
+          <label class="input-group-text" for="product-type">Product type</label>
+          <select class="form-select" id="product-type" v-model="type">
+            <option selected>Choose...</option>
+            <option value="FRUIT">Fruit</option>
+            <option value="VEGETABLES">Vegetables</option>
+            <option value="DRINKS">Drinks</option>
+            <option value="MEAT">Meat</option>
+            <option value="FISH">Fish</option>
+            <option value="UNKNOWN">Others</option>
+          </select>
+        </div>
+        <div class="mt-5">
+          <button class="btn btn-primary me-3" type="submit" @click="createProduct">Create</button>
+          <button class="btn btn-danger" type="reset">Reset</button>
+        </div>
       </div>
-      <div class="input-group mb-2">
-        <label class="input-group-text" for="product-type">Product type</label>
-        <select class="form-select" id="product-type" v-model="type">
-          <option selected>Choose...</option>
-          <option value="FRUIT">Fruit</option>
-          <option value="VEGETABLES">Vegetables</option>
-          <option value="DRINKS">Drinks</option>
-          <option value="MEAT">Meat</option>
-          <option value="FISH">Fish</option>
-          <option value="UNKNOWN">Others</option>
-        </select>
+    </div></div>
+  <div v-if="language === 'de'"><div class="fixed-bottom"><a href="/" class="bn13" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+    Neues Produkt erstellen</a></div>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas text</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-      <div class="mt-5">
-        <button class="btn btn-primary me-3" type="submit" @click="createProduct">Create</button>
-        <button class="btn btn-danger" type="reset">Reset</button>
+      <div class="offcanvas-body">
+        <p>Text</p>
+        <div class="input-group mb-2">
+          <span class="input-group-text" id="product-name">Name</span>
+          <input type="text" class="form-control" v-model="name" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-2">
+          <span class="input-group-text" id="product-kcal">Kcal</span>
+          <input type="number" class="form-control" v-model="kcal" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-2">
+          <label class="input-group-text" for="product-type">Product type</label>
+          <select class="form-select" id="product-type" v-model="type">
+            <option selected>Choose...</option>
+            <option value="FRUIT">Fruit</option>
+            <option value="VEGETABLES">Vegetables</option>
+            <option value="DRINKS">Drinks</option>
+            <option value="MEAT">Meat</option>
+            <option value="FISH">Fish</option>
+            <option value="UNKNOWN">Others</option>
+          </select>
+        </div>
+        <div class="mt-5">
+          <button class="btn btn-primary me-3" type="submit" @click="createProduct">Create</button>
+          <button class="btn btn-danger" type="reset">Reset</button>
+        </div>
       </div>
-    </div>
-  </div>
+    </div></div>
 </template>
 
 <script>
 export default {
   name: 'ProductCreateForm',
+  props: ['mode', 'language'],
   data () {
     return {
       name: '',
@@ -97,9 +134,20 @@ export default {
   animation: bn13bouncy 5s infinite linear;
   position: relative;
 }
-
+.dark .bn13 {
+  border: 3px solid #852d91;
+  color: #852d91;
+}
 .bn13:hover {
   background-color: #2c3e50;
+  color: white;
+}
+.dark .bn13:hover {
+  background-color: #160519;
+  color: white;
+}
+.dark .offcanvas{
+  background-color: #160519;
   color: white;
 }
 

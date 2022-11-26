@@ -1,12 +1,22 @@
 <template>
   <header>
-    <nav>
-      <h1 class="brand">Kalorien Tracker</h1>
-      <router-link class="nav-link" to="/main">Home</router-link>
-      <router-link class="nav-link" to="/main">Home</router-link>
-      <router-link class="nav-link" v-bind:mode="mode" to="/products">Products</router-link>
+    <nav v-if="language === 'en'">
+      <h1 class="brand">Kalorien</h1>
+      <h1 class="brand2">Tracker</h1>
+        <router-link class="nav-link" to="/">Home</router-link>
+        <router-link class="nav-link" to="/main">FAQs</router-link>
+        <router-link class="nav-link" v-bind:language="language" :to="{name: 'products'}">Products</router-link>
+        <router-link class="nav-link"  v-bind:language="language" :to="{name: 'card'}">My card</router-link>
+        <div class="switch">  <Toggle :mode="mode" @toggle="$emit('toggle')"></Toggle></div>
+    </nav>
+    <nav v-if="language === 'de'">
+      <h1 class="brand">Kalorien</h1>
+      <h1 class="brand2">Tracker</h1>
+      <router-link class="nav-link" to="/">Home</router-link>
+      <router-link class="nav-link" to="/main">FAQs</router-link>
+      <router-link class="nav-link" v-bind:language="language" :to="{name: 'products'}">Produkte</router-link>
+      <router-link class="nav-link" v-bind:language="language"  :to="{name: 'card'}">Meine Karte</router-link>
       <div class="switch">  <Toggle :mode="mode" @toggle="$emit('toggle')"></Toggle></div>
-
     </nav>
   </header>
 </template>
@@ -16,13 +26,18 @@ import Toggle from '@/components/Toggle'
 export default {
   name: 'NavBar',
   components: { Toggle },
-  props: ['mode']
+  props: ['mode', 'language'],
+  data () {
+    return {
+      test: 'test'
+    }
+  }
 }
-
 </script>
 
 <style scoped>
 header {
+  text-transform: uppercase;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,22 +52,30 @@ header {
 }
 
 .brand {
-  color: #852d91;;
+  color: #852d91;
 }
 
 .dark .brand {
   color: white;
+  color: #852d91;;
 }
 .switch {
   margin-top: 10px;
-  margin-left: 900px;
+  margin-left: 500px;
 }
 
 .brand {
   font-size: 32px;
-  margin-top: 7px;
+  margin-top: -5px;
   text-transform: uppercase;
   font-weight: 900;
+}
+.brand2 {
+  font-size: 32px;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-top: 20px;
+  margin-left: -156px;
 }
 nav {
   display: flex;
@@ -62,7 +85,8 @@ nav {
 header nav .nav-link {
   display: flex;
   align-items: center;
-  padding:  0px 15px;
+  margin-right: 10px;
+  margin-left: 20px;
 }
 
 header nav .nav-link:hover {
