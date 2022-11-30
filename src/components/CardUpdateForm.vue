@@ -49,7 +49,7 @@ export default {
   methods: {
     updateUser () {
       const myHeaders = new Headers()
-      myHeaders.append('Content-Type', 'application/json');
+      myHeaders.append('Content-Type', 'application/json')
 
       const raw = JSON.stringify({
         weight: this.weight,
