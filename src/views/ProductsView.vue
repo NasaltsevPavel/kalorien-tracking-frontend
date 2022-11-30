@@ -9,7 +9,7 @@
           <img :src="getAvatar(product)" class="card-img-top" :alt="product.name">
           <div class="card-body">
             <h5 class="card-title">{{ product.name }}</h5>
-            <p class="card-text">{{ product.name }} has {{ product.kcal }} calories</p>
+            <p class="card-text">Portion of {{ product.name }} has {{ product.kcal }} calories</p>
           </div>
         </div>
       </div>
@@ -25,13 +25,14 @@
           <img :src="getAvatar(product)" class="card-img-top" :alt="product.name">
           <div class="card-body">
             <h5 class="card-title">{{ product.name }}</h5>
-            <p class="card-text">{{ product.name }} has {{ product.kcal }} calories</p>
+            <p class="card-text">Eine Portion {{ product.name }} hat {{ product.kcal }} Kalorien</p>
           </div>
         </div>
       </div>
     </div>
   </div>
-<ProductCreateForm v-bind:mode="mode" v-bind:language="language" ></ProductCreateForm>
+  <div class="pc"><ProductCreateForm v-bind:mode="mode" v-bind:language="language" ></ProductCreateForm></div>
+
 </template>
 
 <script>

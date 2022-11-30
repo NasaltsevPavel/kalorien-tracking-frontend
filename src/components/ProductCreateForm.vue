@@ -4,22 +4,23 @@
     Create new product</a></div>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas text</h5>
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Create new product</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-        <p>Text</p>
+        <p>Enter the name of the product and number of calories in it, as well as select the appropriate type of your product
+        in order to create a new product.</p>
         <div class="input-group mb-2">
-          <span class="input-group-text" id="product-name">Name</span>
+          <span class="input-group-text" id="product-name1">Name</span>
           <input type="text" class="form-control" v-model="name" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
         <div class="input-group mb-2">
-          <span class="input-group-text" id="product-kcal">Kcal</span>
+          <span class="input-group-text" id="product-kcal1">Kcal</span>
           <input type="number" class="form-control" v-model="kcal" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
         <div class="input-group mb-2">
           <label class="input-group-text" for="product-type">Product type</label>
-          <select class="form-select" id="product-type" v-model="type">
+          <select class="form-select" id="product-type1" v-model="type">
             <option selected>Choose...</option>
             <option value="FRUIT">Fruit</option>
             <option value="VEGETABLES">Vegetables</option>
@@ -31,7 +32,7 @@
         </div>
         <div class="mt-5">
           <button class="btn btn-primary me-3" type="submit" @click="createProduct">Create</button>
-          <button class="btn btn-danger" type="reset">Reset</button>
+          <button class="btn btn-danger" type="reset" @click="this.name='', this.kcal='', this.type=''">Reset</button>
         </div>
       </div>
     </div></div>
@@ -39,11 +40,12 @@
     Neues Produkt erstellen</a></div>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas text</h5>
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Neues Produkt erstellen</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-        <p>Text</p>
+        <p>Geben Sie den Namen des Produkts und die Anzahl der darin enthaltenen Kalorien ein und wählen Sie den entsprechenden Typ Ihres Produkts aus
+          um ein neues Produkt zu erstellen.</p>
         <div class="input-group mb-2">
           <span class="input-group-text" id="product-name">Name</span>
           <input type="text" class="form-control" v-model="name" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
@@ -56,17 +58,17 @@
           <label class="input-group-text" for="product-type">Product type</label>
           <select class="form-select" id="product-type" v-model="type">
             <option selected>Choose...</option>
-            <option value="FRUIT">Fruit</option>
-            <option value="VEGETABLES">Vegetables</option>
-            <option value="DRINKS">Drinks</option>
-            <option value="MEAT">Meat</option>
-            <option value="FISH">Fish</option>
-            <option value="UNKNOWN">Others</option>
+            <option value="FRUIT">Obst</option>
+            <option value="VEGETABLES">Gemüse</option>
+            <option value="DRINKS">Getränk</option>
+            <option value="MEAT">Fleisch</option>
+            <option value="FISH">Fisch</option>
+            <option value="UNKNOWN">Anderes</option>
           </select>
         </div>
         <div class="mt-5">
           <button class="btn btn-primary me-3" type="submit" @click="createProduct">Create</button>
-          <button class="btn btn-danger" type="reset">Reset</button>
+          <button class="btn btn-danger" type="reset" @click="this.name='', this.kcal='', this.type=''">Reset</button>
         </div>
       </div>
     </div></div>

@@ -1,7 +1,11 @@
 <template>
-  <h1>Welcome to my Card</h1>
-  <h5>Text {{ language }}</h5>
+  <div class="pr" v-if="language === 'en'">
+  <h1>Welcome to My Card</h1>
     <div class="col" v-for="user in users" :key="user.id">
+      <div class="card-text">
+        <h5>{{ user.username }} on this page you will find all your main information. </h5>
+        <h5>You can always update your data with the button below. Pay attention on the tips on the sides of the page.</h5>
+      </div>
       <div class="row1">
       <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
         <div class="carousel-indicators">
@@ -40,15 +44,16 @@
       </div>
         <div class="card" style="width: 20rem;">
           <div class="card-header">
-            Featured
+            Your data:
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">{{ user.username }} </li>
-            <li class="list-group-item">{{ user.weight }} </li>
-            <li class="list-group-item">{{ user.height }}</li>
-            <li class="list-group-item">{{ user.age }}</li>
-            <li class="list-group-item">A third item</li>
-            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">Height: {{ user.height }} cm </li>
+            <li class="list-group-item">Weight: {{ user.weight }} kg </li>
+            <li class="list-group-item">Age: {{ user.age }} years</li>
+            <li class="list-group-item">BMI: {{ user.bmi }}</li>
+            <li class="list-group-item">Category: {{ user.category }}</li>
+            <li class="list-group-item">Goal weight: {{ user.goalW }} kg</li>
+            <li class="list-group-item"><card-update-form v-bind:mode="mode" v-bind:language="language"></card-update-form></li>
           </ul>
         </div>
         <div id="carouselExampleCaptions1" class="carousel slide" data-bs-ride="false">
@@ -59,9 +64,10 @@
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="../assets/products/meat.png" class="d-block w-100" alt="...">
+              <img src="../assets/fr1.jpg" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <p>Some representative placeholder content for the first slide.</p>
+                <h6>Eat lots of fruit and veg</h6>
+                <p>It's recommended that you eat at least 5 portions of a variety of fruit and veg every day. They can be fresh, frozen, canned, dried or juiced.</p>
               </div>
             </div>
             <div class="carousel-item">
@@ -95,11 +101,14 @@
         </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script>
+import CardUpdateForm from '@/components/CardUpdateForm'
 export default {
   name: 'CardView',
+  components: { CardUpdateForm },
   props: ['mode', 'language'],
   data () {
     return {
@@ -122,12 +131,12 @@ export default {
 </script>
 
 <style scoped>
+.card-text {
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
 h1{
   margin-top: 10px;
-}
-
-h5{
-  margin-bottom: 20px;
 }
 #carouselExampleCaptions {
   width: 350px;
@@ -146,11 +155,13 @@ h5{
   margin-top: 30px;
   margin-left: 140px;
 }
-
-.carousel-caption {
+h6{
   color: black;
   font-weight: 650;
-
+}
+.carousel-caption {
+  color: black;
+  font-weight: 600;
 }
 
 .dark .card {
@@ -161,5 +172,48 @@ h5{
 .dark .list-group-item {
   background: #160519;
   color: white;
+}
+
+.pr {
+  animation: 3s show ease;
+}
+
+@keyframes show {
+  from { opacity: 0;}
+  to { opacity: 1;}
+}
+
+.button-38 {
+  background-color: #FFFFFF;
+  border: 0;
+  border-radius: .5rem;
+  box-sizing: border-box;
+  color: #111827;
+  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: .75rem 1rem;
+  text-align: center;
+  text-decoration: none #D1D5DB solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-38:hover {
+  background-color: rgb(249,250,251);
+}
+
+.button-38:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.button-38:focus-visible {
+  box-shadow: none;
 }
 </style>
