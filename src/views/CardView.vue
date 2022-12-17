@@ -7,40 +7,43 @@
         <h5>You can always update your data with the button below. Pay attention on the tips on the sides of the page.</h5>
       </div>
       <div class="row1">
-      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <img src="../assets/products/meat.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>First slide label</h5>
+                <p>Some representative placeholder content for the first slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="../assets/products/fish.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Is Salmon Good for You?</h5>
+                <p>Salmon is one of the healthiest foods you can eat and a great source of protein.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="../assets/products/VEGETABLES.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Eat plenty of fruit and veg</h5>
+                <p>They contain plenty of vitamins and minerals.</p>
+              </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="../assets/products/meat.png" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <p>Some representative placeholder content for the first slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="../assets/products/fish.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <p>Some representative placeholder content for the second slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="../assets/products/drinks.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <p>Some representative placeholder content for the third slide.</p>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>
         <div class="card" style="width: 20rem;">
           <div class="card-header">
@@ -56,38 +59,40 @@
             <li class="list-group-item"><card-update-form v-bind:mode="mode" v-bind:language="language"></card-update-form></li>
           </ul>
         </div>
-        <div id="carouselExampleCaptions1" class="carousel slide" data-bs-ride="false">
+        <div id="carouselExampleDark1" class="carousel carousel-dark slide" data-bs-ride="carousel">
           <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleDark1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark1" data-bs-slide-to="2" aria-label="Slide 3"></button>
           </div>
           <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="../assets/fr1.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <img src="../assets/products/meat.png" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <h6>Eat lots of fruit and veg</h6>
-                <p>It's recommended that you eat at least 5 portions of a variety of fruit and veg every day. They can be fresh, frozen, canned, dried or juiced.</p>
+                <h5>First slide label</h5>
+                <p>Some representative placeholder content for the first slide.</p>
               </div>
             </div>
-            <div class="carousel-item">
-              <img src="../assets/products/fish.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="../assets/products/meat.png" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
                 <p>Some representative placeholder content for the second slide.</p>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="../assets/products/drinks.jpg" class="d-block w-100" alt="...">
+              <img src="../assets/products/meat.png" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
                 <p>Some representative placeholder content for the third slide.</p>
               </div>
             </div>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide="prev">
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark1" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide="next">
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark1" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
@@ -95,9 +100,117 @@
       </div>
       <div id="bmr" class="card w-75">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <h1>TExt</h1>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <h5 class="card-title">Your BMR:</h5>
+          <h1>{{ user.bmr }} calories</h1>
+          <p class="card-text">You need to eat this number of calories per day to reach your weight goal.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pr" v-if="language === 'de'">
+    <h1>Welcome to My Card DE</h1>
+    <div class="col" v-for="user in users" :key="user.id">
+      <div class="card-text">
+        <h5>{{ user.username }} on this page you will find all your main information. </h5>
+        <h5>You can always update your data with the button below. Pay attention on the tips on the sides of the page.</h5>
+      </div>
+      <div class="row1">
+        <div id="carouselExampleDark111" class="carousel carousel-dark slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark111" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark111" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark111" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <img src="../assets/products/meat.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>First slide label</h5>
+                <p>Some representative placeholder content for the first slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="../assets/products/fish.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Is Salmon Good for You?</h5>
+                <p>Salmon is one of the healthiest foods you can eat and a great source of protein.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="../assets/products/VEGETABLES.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Eat plenty of fruit and veg</h5>
+                <p>They contain plenty of vitamins and minerals.</p>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark111" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark111" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <div class="card" style="width: 20rem;">
+          <div class="card-header">
+            Your data:
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Height: {{ user.height }} cm </li>
+            <li class="list-group-item">Weight: {{ user.weight }} kg </li>
+            <li class="list-group-item">Age: {{ user.age }} years</li>
+            <li class="list-group-item">BMI: {{ user.bmi }}</li>
+            <li class="list-group-item">Category: {{ user.category }}</li>
+            <li class="list-group-item">Goal weight: {{ user.goalW }} kg</li>
+            <li class="list-group-item"><card-update-form v-bind:mode="mode" v-bind:language="language"></card-update-form></li>
+          </ul>
+        </div>
+        <div id="carouselExampleDark11" class="carousel carousel-dark slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark11" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark11" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark11" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <img src="../assets/products/meat.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>First slide label</h5>
+                <p>Some representative placeholder content for the first slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="../assets/products/meat.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Some representative placeholder content for the second slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="../assets/products/meat.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark11" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark11" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      <div id="bmr1" class="card w-75">
+        <div class="card-body">
+          <h5 class="card-title">Your BMR:</h5>
+          <h1>{{ user.bmr }} calories</h1>
+          <p class="card-text">You need to eat this number of calories per day to reach your weight goal.</p>
         </div>
       </div>
     </div>
@@ -138,14 +251,23 @@ export default {
 h1{
   margin-top: 10px;
 }
-#carouselExampleCaptions {
+#carouselExampleDark {
   width: 350px;
   margin-left: 90px;
   margin-right: 40px;
 }
-#carouselExampleCaptions1 {
+#carouselExampleDark1 {
   width: 350px;
   margin-left: 40px;
+}
+#carouselExampleDark11 {
+  width: 350px;
+  margin-left: 40px;
+}
+#carouselExampleDark111 {
+  width: 350px;
+  margin-left: 90px;
+  margin-right: 40px;
 }
 .row1{
   display: flex;
@@ -155,9 +277,9 @@ h1{
   margin-top: 30px;
   margin-left: 140px;
 }
-h6{
-  color: black;
-  font-weight: 650;
+#bmr1 {
+  margin-top: 30px;
+  margin-left: 140px;
 }
 .carousel-caption {
   color: black;

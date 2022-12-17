@@ -4,19 +4,23 @@
       <h1 class="brand">Kalorien</h1>
       <h1 class="brand2">Tracker</h1>
         <router-link class="nav-link" to="/">Home</router-link>
-        <router-link class="nav-link" to="/main">FAQs</router-link>
+        <router-link class="nav-link"  v-bind:language="language" :to="{name: 'faqs'}">FAQs</router-link>
         <router-link class="nav-link" v-bind:language="language" :to="{name: 'products'}">Products</router-link>
         <router-link class="nav-link"  v-bind:language="language" :to="{name: 'card'}">My card</router-link>
-        <div class="switch">  <Toggle :mode="mode" @toggle="$emit('toggle')"></Toggle></div>
+        <router-link class="nav-link"  v-bind:language="language" :to="{name: 'days'}">My days</router-link>
+       <button class="language" @click="$emit('toggle2')"> ENG </button>
+        <div class="switch">  <p class="dm">Dark mode:</p> <Toggle :mode="mode" @toggle="$emit('toggle')"></Toggle></div>
     </nav>
     <nav v-if="language === 'de'">
       <h1 class="brand">Kalorien</h1>
       <h1 class="brand2">Tracker</h1>
       <router-link class="nav-link" to="/">Home</router-link>
-      <router-link class="nav-link" to="/main">FAQs</router-link>
+      <router-link class="nav-link" to="/faqs">FAQs</router-link>
       <router-link class="nav-link" v-bind:language="language" :to="{name: 'products'}">Produkte</router-link>
       <router-link class="nav-link" v-bind:language="language"  :to="{name: 'card'}">Meine Karte</router-link>
-      <div class="switch">  <Toggle :mode="mode" @toggle="$emit('toggle')"></Toggle></div>
+      <router-link class="nav-link"  v-bind:language="language" :to="{name: 'days'}">Meine Tage</router-link>
+      <button class="language" @click="$emit('toggle2')"> DE </button>
+      <div class="switch"> <p class="dm">Dark mode:</p> <Toggle :mode="mode" @toggle="$emit('toggle')"></Toggle></div>
     </nav>
   </header>
 </template>
@@ -46,7 +50,15 @@ header {
   background: #C3C3C3;
   transition: background 0.3s ease-in-out;
 }
-
+.language {
+  margin-left: 20px;
+  background-color: #C3C3C3;
+  border: none;
+}
+.dm {
+  margin-top: -15px;
+  margin-bottom: 0px;
+}
 .dark header  {
   background: #160519 ;
 }
@@ -61,7 +73,7 @@ header {
 }
 .switch {
   margin-top: 10px;
-  margin-left: 500px;
+  margin-left: 550px;
 }
 
 .brand {

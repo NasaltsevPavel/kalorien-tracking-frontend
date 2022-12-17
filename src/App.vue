@@ -1,6 +1,6 @@
 <template>
   <div class="app" v-bind:class="mode">
-    <NavBar v-bind:mode="mode" v-bind:language="language" @toggle="toggle"></NavBar>
+    <NavBar v-bind:mode="mode" v-bind:language="language" @toggle="toggle" @toggle2="toggle2"></NavBar>
     <router-view v-bind:language="language"/>
   <div class="container">
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
@@ -8,7 +8,6 @@
         <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
         </a>
       <span class="mb-3 mb-md-0 text-muted">&copy; 2022 Company, Inc</span>
-          <button class="language" @click="toggle2"> {{ lg }}</button>
       </div>
       <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
       </ul>

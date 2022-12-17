@@ -3,7 +3,7 @@
     <img class="logo" alt="Logo" src="../assets/logo.png">
     <h1 class="text">Kalorien</h1>
     <h1 class="text1">Tracker</h1>
-    <a href="/about"><button class="bn632-hover bn24">Get Started</button></a>
+    <a href="/card"><button class="bn632-hover bn24">Get Started</button></a>
   </div>
 </template>
 <style>

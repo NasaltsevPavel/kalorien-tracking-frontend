@@ -2,7 +2,9 @@
   <div class="pr" v-if="language === 'en'">
     <h1>Welcome to Products</h1>
     <div class="productstext"><h5>On this page you can find information about all products.</h5>
-      <h5> You can also add new products. Use the button "Create new product" on the end of this page.</h5></div>
+      <h5> You can also add new products. Use the button "Create new product" on the end of this page.</h5>
+    <h5>You can also use the button below to delete a product.</h5>
+    <ProductDeleteForm v-bind:mode="mode" v-bind:language="language" ></ProductDeleteForm></div>
     <div class="row row-cols-1 row-cols-md-4 g-4">
       <div class="col" v-for="product in products" :key="product.id">
         <div class="card" >
@@ -37,13 +39,15 @@
 
 <script>
 import ProductCreateForm from '@/components/ProductCreateForm'
+import ProductDeleteForm from '@/components/ProductDeleteForm'
 export default {
   name: 'ProductsView',
-  components: { ProductCreateForm },
+  components: { ProductDeleteForm, ProductCreateForm },
   props: ['mode', 'language'],
   data () {
     return {
-      products: []
+      products: [],
+      link: 'http://localhost:8080/v1/products'
     }
   },
   methods: {
