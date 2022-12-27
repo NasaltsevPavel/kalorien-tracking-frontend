@@ -56,7 +56,7 @@
             <li class="list-group-item">BMI: {{ user.bmi }}</li>
             <li class="list-group-item">Category: {{ user.category }}</li>
             <li class="list-group-item">Goal weight: {{ user.goalW }} kg</li>
-            <li class="list-group-item"><card-update-form v-bind:mode="mode" v-bind:language="language"></card-update-form></li>
+            <li class="list-group-item"><card-update-form v-bind:mode="mode" v-bind:language="language" @updated="Update"></card-update-form></li>
           </ul>
         </div>
         <div id="carouselExampleDark1" class="carousel carousel-dark slide" data-bs-ride="carousel">
@@ -238,6 +238,17 @@ export default {
       .then(response => response.json())
       .then(result => this.users.push(result)
       )
+      .catch(error => console.log('error', error))
+  },
+  Update () {
+    const requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    }
+
+    fetch('http://localhost:8080/v1/users/1', requestOptions)
+      .then(response => response.json())
+      .then(user => this.users.push(user))
       .catch(error => console.log('error', error))
   }
 }

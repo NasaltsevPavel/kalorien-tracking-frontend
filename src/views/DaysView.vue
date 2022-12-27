@@ -15,7 +15,7 @@
             <li class="list-group-item">Products: {{day.productsNames}}</li>
             <li class="list-group-item">Calories: {{ day.todayKcal }} / {{day.dayBmr}}</li>
             <li class="list-group-item"><DayProductAddForm v-bind:mode="mode" v-bind:language="language"></DayProductAddForm></li>
-            <li class="list-group-item">Delete products</li>
+            <li class="list-group-item"><DayProductDeleteForm v-bind:mode="mode" v-bind:language="language"></DayProductDeleteForm></li>
           </ul>
         </div>
       </div>
@@ -25,7 +25,9 @@
   <div class="pr" v-if="language === 'de'">
     <h1>Willkommen auf der Tagen Seite</h1>
     <div class="daystext"><h5>Auf dieser Seite finden Sie Informationen zu allen erstellten Tagen.</h5>
-      <h5>Sie können auch neue Tage hinzufügen und Produkte zu Tagen hinzufügen. Verwenden Sie den Button "Neuen Tag erstellen" am Ende dieser Seite.</h5></div>
+      <h5>Sie können auch neue Tage hinzufügen und Produkte zu Tagen hinzufügen. Verwenden Sie den Button "Neuen Tag erstellen" am Ende dieser Seite.</h5>
+      <h5>Sie können auch die Schaltfläche unten verwenden, um einen Tag zu löschen.</h5>
+      <DayDeleteForm v-bind:mode="mode" v-bind:language="language"></DayDeleteForm></div>
     <div class="row row-cols-1 row-cols-md-4 g-4">
       <div class="col" v-for="day in days" :key="day.id">
         <div class="card" style="width: 18rem;">
@@ -36,7 +38,7 @@
               <li class="list-group-item">Produkte: {{day.productsNames}}</li>
               <li class="list-group-item">Kalorien: {{ day.todayKcal }} / {{day.dayBmr}}</li>
               <li class="list-group-item"><DayProductAddForm v-bind:mode="mode" v-bind:language="language"></DayProductAddForm></li>
-              <li class="list-group-item">Delete products</li>
+              <li class="list-group-item"><DayProductDeleteForm v-bind:mode="mode" v-bind:language="language"></DayProductDeleteForm></li>
             </ul>
           </div>
         </div>
@@ -50,9 +52,10 @@
 import DayCreateForm from '@/components/DayCreateForm'
 import DayProductAddForm from '@/components/DayProductAddForm'
 import DayDeleteForm from '@/components/DayDeleteForm'
+import DayProductDeleteForm from '@/components/DayProductDeleteForm'
 export default {
   name: 'DaysView',
-  components: { DayDeleteForm, DayProductAddForm, DayCreateForm },
+  components: { DayProductDeleteForm, DayDeleteForm, DayProductAddForm, DayCreateForm },
   props: ['mode', 'language'],
   data () {
     return {
@@ -70,6 +73,17 @@ export default {
       .then(result => result.forEach(day => {
         this.days.push(day)
       }))
+      .catch(error => console.log('error', error))
+  },
+  addDay () {
+    const requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    }
+
+    fetch('http://localhost:8080/v1/products', requestOptions)
+      .then(response => response.json())
+      .then(day => this.days.push(day))
       .catch(error => console.log('error', error))
   }
 }

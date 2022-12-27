@@ -10,22 +10,33 @@
       <div class="offcanvas-body">
         <p>Enter the name of the product and number of calories in it, as well as select the appropriate type of your product
           in order to create a new product.</p>
+        <form class="row g-3 needs-validation" novalidate>
         <div class="input-group mb-2">
           <span class="input-group-text" id="day1">Day</span>
-          <input type="number" class="form-control" v-model="day" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <input type="number" class="form-control" v-model="day" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+          <div class="invalid-feedback">
+            Please provide a day.
+          </div>
         </div>
         <div class="input-group mb-2">
           <span class="input-group-text" id="product-name1">Month</span>
-          <input type="number" class="form-control" v-model="month" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <input type="number" class="form-control" v-model="month" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+          <div class="invalid-feedback">
+            Please provide a month.
+          </div>
         </div>
         <div class="input-group mb-2">
           <span class="input-group-text" id="product-kcal1">Year</span>
-          <input type="number" class="form-control" v-model="year" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <input type="number" class="form-control" v-model="year" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+          <div class="invalid-feedback">
+            Please provide a year.
+          </div>
         </div>
         <div class="mt-5">
           <button class="btn btn-primary me-3" type="submit" @click="createDay">Create</button>
           <button class="btn btn-danger" type="reset" @click="this.day=0, this.month=0, this.year=0">Reset</button>
         </div>
+        </form>
       </div>
     </div></div>
   <div v-if="language === 'de'"><div class="fixed-bottom"><a href="/" class="bn13" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
@@ -38,22 +49,33 @@
       <div class="offcanvas-body">
         <p>Geben Sie den Namen des Produkts und die Anzahl der darin enthaltenen Kalorien ein und wählen Sie den entsprechenden Typ Ihres Produkts aus
           um ein neues Produkt zu erstellen.</p>
+        <form class="row g-3 needs-validation" novalidate>
         <div class="input-group mb-2">
           <span class="input-group-text" id="day">Tag</span>
           <input type="number" class="form-control" v-model="day" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <div class="invalid-feedback">
+            Bitte geben Sie einen Tag an.
+          </div>
         </div>
         <div class="input-group mb-2">
           <span class="input-group-text" id="product-name">Monat</span>
           <input type="number" class="form-control" v-model="month" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <div class="invalid-feedback">
+            Bitte geben Sie einen Monat an.
+          </div>
         </div>
         <div class="input-group mb-2">
           <span class="input-group-text" id="product-kcal">Jahr</span>
           <input type="number" class="form-control" v-model="year" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <div class="invalid-feedback">
+            Bitte geben Sie ein Jahr an.
+          </div>
         </div>
         <div class="mt-5">
-          <button class="btn btn-primary me-3" type="submit" @click="createDay">Create</button>
-          <button class="btn btn-danger" type="reset" @click="this.day=0, this.month=0, this.year=0">Reset</button>
+          <button class="btn btn-primary me-3" type="submit" @click="createDay">Erstellen</button>
+          <button class="btn btn-danger" type="reset" @click="this.day=0, this.month=0, this.year=0">Zurücksetzen</button>
         </div>
+        </form>
       </div>
     </div></div>
 </template>
@@ -62,35 +84,57 @@
 export default {
   name: 'DayCreateForm',
   props: ['mode', 'language'],
+  emits: ['created'],
   data () {
     return {
-      day: 0,
-      month: 0,
+      day: '',
+      month: '',
       year: 2023
     }
   },
   methods: {
-    createDay () {
-      const myHeaders = new Headers()
-      myHeaders.append('Content-Type', 'application/json')
+    async createDay () {
+      if (this.validate()) {
+        const myHeaders = new Headers()
+        myHeaders.append('Content-Type', 'application/json')
 
-      const raw = JSON.stringify({
-        day: this.day,
-        month: this.month,
-        year: this.year
-      })
+        const raw = JSON.stringify({
+          day: this.day,
+          month: this.month,
+          year: this.year
+        })
 
-      const requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: raw,
-        redirect: 'follow'
+        const requestOptions = {
+          method: 'POST',
+          headers: myHeaders,
+          body: raw,
+          redirect: 'follow'
+        }
+
+        fetch('http://localhost:8080/v1/days', requestOptions)
+          .then(response => response.text())
+          .then(result => console.log(result))
+          .catch(error => console.log('error', error))
       }
+    },
+    validate () {
+      let valid = true
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      const forms = document.querySelectorAll('.needs-validation')
 
-      fetch('http://localhost:8080/v1/days', requestOptions)
-        .then(response => response.text())
-        .then(result => console.log(result))
-        .catch(error => console.log('error', error))
+      // Loop over them and prevent submission
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            valid = false
+            event.preventDefault()
+            event.stopPropagation()
+          }
+
+          form.classList.add('was-validated')
+        }, false)
+      })
+      return valid
     }
   }
 }

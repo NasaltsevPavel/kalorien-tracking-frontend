@@ -20,7 +20,9 @@
   <div class="pr" v-if="language === 'de'">
     <h1>Willkommen auf der Produktseite</h1>
     <div class="productstext"><h5>Auf dieser Seite finden Sie Informationen zu allen Produkten.</h5>
-      <h5> Sie können auch neue Produkte hinzufügen. Verwenden Sie den Button "Neues Produkt erstellen" am Ende dieser Seite.</h5></div>
+      <h5> Sie können auch neue Produkte hinzufügen. Verwenden Sie den Button "Neues Produkt erstellen" am Ende dieser Seite.</h5>
+      <h5>Sie können auch den  unten verwenden, um ein Produkt zu löschen.</h5>
+      <ProductDeleteForm v-bind:mode="mode" v-bind:language="language" @deleted="addProduct"></ProductDeleteForm></div>
     <div class="row row-cols-1 row-cols-md-4 g-4">
       <div class="col" v-for="product in products" :key="product.id">
         <div class="card" >
@@ -46,8 +48,7 @@ export default {
   props: ['mode', 'language'],
   data () {
     return {
-      products: [],
-      link: 'http://localhost:8080/v1/products'
+      products: []
     }
   },
   methods: {
@@ -84,6 +85,20 @@ export default {
         this.products.push(product)
       }))
       .catch(error => console.log('error', error))
+  },
+  addProduct () {
+    const requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    }
+
+    fetch('http://localhost:8080/v1/products', requestOptions)
+      .then(response => response.json())
+      .then(product => this.products.push(product))
+      .catch(error => console.log('error', error))
+  },
+  deleteProduct () {
+    console.log('YES')
   }
 }
 </script>

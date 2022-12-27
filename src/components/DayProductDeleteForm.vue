@@ -1,14 +1,14 @@
 <template>
   <div v-if="language === 'en'">
-    <button class="button-38" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Add products</button>
+    <button class="button-38" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight9" aria-controls="offcanvasRight9">Delete products</button>
 
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight9" aria-labelledby="offcanvasRightLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasRightLabel">Add products</h5>
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Delete products</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-        <p>Enter the name of the product and the ID of the day to which the product should be added.</p>
+        <p>Enter the name of the product and the ID of the day to which the product should be deleted.</p>
         <form class="row g-3 needs-validation" novalidate>
         <div class="input-group mb-2">
           <span class="input-group-text" id="user-weight">Product name</span>
@@ -25,7 +25,7 @@
           </div>
         </div>
         <div class="mt-5">
-          <button class="btn btn-primary me-3" type="submit" @click="addProduct">Add</button>
+          <button class="btn btn-primary me-3" type="submit" @click="deleteProduct">Delete</button>
           <button class="btn btn-danger" type="reset" @click="this.productName='', this.id=0">Reset</button>
         </div>
         </form>
@@ -33,35 +33,27 @@
     </div>
   </div>
   <div v-if="language === 'de'">
-    <button class="button-38" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight1" aria-controls="offcanvasRight1">Produkte hinzufügen</button>
+    <button class="button-38" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight19" aria-controls="offcanvasRight19">Delete products</button>
 
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight1" aria-labelledby="offcanvasRightLabel1">
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight19" aria-labelledby="offcanvasRightLabel1">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasRightLabel1">Produkte hinzufügen</h5>
+        <h5 class="offcanvas-title" id="offcanvasRightLabel1">Text</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-        <p>Geben Sie den Namen des Produkts und die ID des Tages ein, zu dem das Produkt hinzugefügt werden soll.</p>
-        <form class="row g-3 needs-validation" novalidate>
+        <p>Text</p>
         <div class="input-group mb-2">
           <span class="input-group-text" id="user-weight1">Produktname</span>
-          <input type="text" class="form-control" v-model="productName" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-          <div class="invalid-feedback">
-            Bitte geben Sie einen Produktnamen an.
-          </div>
+          <input type="text" class="form-control" v-model="productName" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
         <div class="input-group mb-2">
-          <span class="input-group-text" id="user-height1">Tag Id</span>
-          <input type="number" class="form-control" v-model="id" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-          <div class="invalid-feedback">
-            Bitte geben Sie eine Tages-ID an.
-          </div>
+          <span class="input-group-text" id="user-height1">Day Id</span>
+          <input type="number" class="form-control" v-model="id" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
         <div class="mt-5">
-          <button class="btn btn-primary me-3" type="submit" @click="addProduct">Hinzufügen</button>
-          <button class="btn btn-danger" type="reset" @click="this.productName='', this.id=0">Zurücksetzen</button>
+          <button class="btn btn-primary me-3" type="submit" @click="deleteProduct">Delete</button>
+          <button class="btn btn-danger" type="reset" @click="this.productName='', this.id=0">Reset</button>
         </div>
-        </form>
       </div>
     </div>
   </div>
@@ -69,7 +61,7 @@
 
 <script>
 export default {
-  name: 'DayProductAddForm',
+  name: 'DayProductDeleteForm',
   props: ['mode', 'language'],
   data () {
     return {
@@ -78,14 +70,14 @@ export default {
     }
   },
   methods: {
-    async addProduct () {
+    async deleteProduct () {
       if (this.validate()) {
         const baseUrl = 'http://localhost:8080/v1'
         const productName1 = this.productName
         const idproduct = this.id
         const endpoint = baseUrl + '/days/' + idproduct + '/' + productName1
         const requestOptions = {
-          method: 'PUT',
+          method: 'DELETE',
           redirect: 'follow'
         }
 

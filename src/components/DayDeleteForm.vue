@@ -8,21 +8,59 @@
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Day</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p>Write the ID of day you want to delete and confirm the deletion with the button</p>
-            <div class="input-group mb-2">
-              <span class="input-group-text" id="user-age">ID</span>
-              <input type="number" class="form-control" v-model="dayid" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <form class="row g-3 needs-validation" novalidate>
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Day</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-danger" @click="deleteDay">Delete day</button>
-          </div>
+            <div class="modal-body">
+              <p>Write the ID of day you want to delete and confirm the deletion with the button.</p>
+              <div class="input-group mb-2">
+                <span class="input-group-text" id="user-id">ID</span>
+                <input type="text" class="form-control" v-model="dayId" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                <div class="invalid-feedback">
+                  Please provide a ID.
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-danger" @click="deleteDay">Delete day</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div v-if="language === 'de'">
+    <!-- Button trigger modal -->
+    <button type="button" class="button-38" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+      Einen Tag löschen
+    </button>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form class="row g-3 needs-validation" novalidate>
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel1">Einen Tag löschen</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Geben Sie die ID des Tages ein, den Sie löschen möchten, und bestätigen Sie das Löschen mit dem Button.</p>
+              <div class="input-group mb-2">
+                <span class="input-group-text" id="user-id1">ID</span>
+                <input type="text" class="form-control" v-model="dayId" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                <div class="invalid-feedback">
+                  Bitte geben Sie einen ID an.
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+              <button type="submit" class="btn btn-danger" @click="deleteDay">Löschen</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -33,25 +71,47 @@
 export default {
   name: 'DayDeleteForm',
   props: ['mode', 'language'],
+  emits: ['deleted'],
   data () {
     return {
-      dayid: 0
+      dayId: ''
     }
   },
   methods: {
-    deleteDay () {
-      const baseUrl = 'http://localhost:8080/v1'
-      const dayid = this.dayid
-      const endpoint = baseUrl + '/days/' + dayid
-      const requestOptions = {
-        method: 'DELETE',
-        redirect: 'follow'
-      }
+    async deleteDay () {
+      if (this.validate()) {
+        const baseUrl = 'http://localhost:8080/v1'
+        const dayId = this.dayId
+        const endpoint = baseUrl + '/days/' + dayId
+        const requestOptions = {
+          method: 'DELETE',
+          redirect: 'follow'
+        }
 
-      fetch(endpoint, requestOptions)
-        .then(response => response.text())
-        .then(result => console.log(result))
-        .catch(error => console.log('error', error))
+        fetch(endpoint, requestOptions)
+          .then(response => response.text())
+          .then(result => console.log(result))
+          .catch(error => console.log('error', error))
+      }
+    },
+    validate () {
+      let valid = true
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      const forms = document.querySelectorAll('.needs-validation')
+
+      // Loop over them and prevent submission
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            valid = false
+            event.preventDefault()
+            event.stopPropagation()
+          }
+
+          form.classList.add('was-validated')
+        }, false)
+      })
+      return valid
     }
   }
 }
