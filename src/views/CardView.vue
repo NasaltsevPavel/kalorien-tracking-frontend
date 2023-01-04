@@ -145,25 +145,25 @@
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark111" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
+              <span class="visually-hidden">Vorherige</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark111" data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
+              <span class="visually-hidden">Nächste</span>
             </button>
           </div>
         </div>
         <div class="card" style="width: 20rem;">
           <div class="card-header">
-            Your data:
+            Deine Daten:
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Height: {{ user.height }} cm </li>
-            <li class="list-group-item">Weight: {{ user.weight }} kg </li>
-            <li class="list-group-item">Age: {{ user.age }} years</li>
+            <li class="list-group-item">Größe: {{ user.height }} cm </li>
+            <li class="list-group-item">Gewicht: {{ user.weight }} kg </li>
+            <li class="list-group-item">Alter: {{ user.age }} years</li>
             <li class="list-group-item">BMI: {{ user.bmi }}</li>
-            <li class="list-group-item">Category: {{ user.category }}</li>
-            <li class="list-group-item">Goal weight: {{ user.goalW }} kg</li>
+            <li class="list-group-item">Kategorie: {{ user.category }}</li>
+            <li class="list-group-item">Zielgewicht: {{ user.goalW }} kg</li>
             <li class="list-group-item"><card-update-form v-bind:mode="mode" v-bind:language="language"></card-update-form></li>
           </ul>
         </div>
@@ -175,42 +175,42 @@
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="10000">
-              <img src="../assets/products/meat.png" class="d-block w-100" alt="...">
+              <img src="../assets/products/unknown.jpg" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>Some representative placeholder content for the first slide.</p>
+                <h5>Do not skip breakfast</h5>
+                <p>Skipping breakfast will not help you lose weight.</p>
               </div>
             </div>
             <div class="carousel-item" data-bs-interval="2000">
               <img src="../assets/products/meat.png" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <h5>Second slide label</h5>
-                <p>Some representative placeholder content for the second slide.</p>
+                <h5>Read food labels</h5>
+                <p>Knowing how to read food labels can help you choose healthier options.</p>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="../assets/products/meat.png" class="d-block w-100" alt="...">
+              <img src="../assets/products/FRUIT.jpg" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
-                <p>Some representative placeholder content for the third slide.</p>
+                <h5>Use a smaller plate</h5>
+                <p>Using smaller plates can help you eat smaller portions.</p>
               </div>
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark11" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+            <span class="visually-hidden">Vorherige</span>
           </button>
           <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark11" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+            <span class="visually-hidden">Nächste</span>
           </button>
         </div>
       </div>
       <div id="bmr1" class="card w-75">
         <div class="card-body">
-          <h5 class="card-title">Your BMR:</h5>
-          <h1>{{ user.bmr }} calories</h1>
-          <p class="card-text">You need to eat this number of calories per day to reach your weight goal.</p>
+          <h5 class="card-title">Dein BMR:</h5>
+          <h1>{{ user.bmr }} Kalorien</h1>
+          <p class="card-text">Sie müssen diese Anzahl an Kalorien pro Tag zu sich nehmen, um Ihr Zielgewicht zu erreichen.</p>
         </div>
       </div>
     </div>
