@@ -37,7 +37,7 @@
             <option value="UNKNOWN">Others</option>
           </select>
           <div class="invalid-feedback">
-            Please choose a gender.
+            Please choose a type.
           </div>
         </div>
         <div class="mt-5">
@@ -62,14 +62,14 @@
           <span class="input-group-text" id="product-name">Name</span>
           <input type="text" class="form-control" v-model="name" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
           <div class="invalid-feedback">
-            Please provide a name.
+            Bitte geben Sie einen Namen an.
           </div>
         </div>
         <div class="input-group mb-2">
           <span class="input-group-text" id="product-kcal">Kcal</span>
           <input type="number" class="form-control" v-model="kcal" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
           <div class="invalid-feedback">
-            Please provide a kcal number.
+            Bitte geben Sie eine kcal-Zahl an.
           </div>
         </div>
         <div class="input-group mb-2">
@@ -84,7 +84,7 @@
             <option value="UNKNOWN">Anderes</option>
           </select>
           <div class="invalid-feedback">
-            Please choose a gender.
+            Bitte wählen Sie einen Typ aus.
           </div>
         </div>
         <div class="mt-5">

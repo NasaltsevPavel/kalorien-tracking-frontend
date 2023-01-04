@@ -41,19 +41,27 @@
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-        <p>Text</p>
+        <p>Geben Sie den Namen des Produkts und die ID des Tages ein, zu dem das Produkt gelöscht werden soll.</p>
+        <form class="row g-3 needs-validation" novalidate>
         <div class="input-group mb-2">
           <span class="input-group-text" id="user-weight1">Produktname</span>
-          <input type="text" class="form-control" v-model="productName" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <input type="text" class="form-control" v-model="productName" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+          <div class="invalid-feedback">
+            Bitte geben Sie einen Produktnamen an.
+          </div>
         </div>
         <div class="input-group mb-2">
           <span class="input-group-text" id="user-height1">Day Id</span>
-          <input type="number" class="form-control" v-model="id" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <input type="number" class="form-control" v-model="id" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+          <div class="invalid-feedback">
+            Bitte geben Sie eine Tages-ID an.
+          </div>
         </div>
         <div class="mt-5">
-          <button class="btn btn-primary me-3" type="submit" @click="deleteProduct">Delete</button>
-          <button class="btn btn-danger" type="reset" @click="this.productName='', this.id=0">Reset</button>
+          <button class="btn btn-primary me-3" type="submit" @click="deleteProduct">Löschen</button>
+          <button class="btn btn-danger" type="reset" @click="this.productName='', this.id=0">Zurücksetzen</button>
         </div>
+        </form>
       </div>
     </div>
   </div>

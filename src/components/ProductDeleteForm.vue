@@ -47,18 +47,18 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <p>Write the name of product you want to delete and confirm the deletion with the button</p>
+            <p>Geben Sie den Namen des Produkts ein, das Sie löschen möchten, und bestätigen Sie das Löschen mit der Schaltfläche</p>
             <div class="input-group mb-2">
               <span class="input-group-text" id="user-age1">Name</span>
               <input type="text" class="form-control" v-model="name" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
               <div class="invalid-feedback">
-                Please provide a name.
+                Bitte geben Sie einen Namen an.
               </div>
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button  class="btn btn-danger" type="submit" @click="deleteProduct">Delete product</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+            <button  class="btn btn-danger" type="submit" @click="deleteProduct">Produkt löschen</button>
           </div>
           </form>
         </div>

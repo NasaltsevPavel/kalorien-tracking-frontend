@@ -17,8 +17,8 @@
             <div class="carousel-item active" data-bs-interval="10000">
               <img src="../assets/products/meat.png" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>Some representative placeholder content for the first slide.</p>
+                <h5>Which is the best meat in the world?</h5>
+                <p>Goat meat is considered the healthiest of red meats as a rich source of nutrients and including protein.</p>
               </div>
             </div>
             <div class="carousel-item" data-bs-interval="2000">
@@ -67,24 +67,24 @@
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="10000">
-              <img src="../assets/products/meat.png" class="d-block w-100" alt="...">
+              <img src="../assets/products/unknown.jpg" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>Some representative placeholder content for the first slide.</p>
+                <h5>Do not skip breakfast</h5>
+                <p>Skipping breakfast will not help you lose weight.</p>
               </div>
             </div>
             <div class="carousel-item" data-bs-interval="2000">
               <img src="../assets/products/meat.png" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <h5>Second slide label</h5>
-                <p>Some representative placeholder content for the second slide.</p>
+                <h5>Read food labels</h5>
+                <p>Knowing how to read food labels can help you choose healthier options.</p>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="../assets/products/meat.png" class="d-block w-100" alt="...">
+              <img src="../assets/products/FRUIT.jpg" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
-                <p>Some representative placeholder content for the third slide.</p>
+                <h5>Use a smaller plate</h5>
+                <p>Using smaller plates can help you eat smaller portions.</p>
               </div>
             </div>
           </div>
@@ -108,11 +108,11 @@
     </div>
   </div>
   <div class="pr" v-if="language === 'de'">
-    <h1>Welcome to My Card DE</h1>
+    <h1>Willkommen auf deiner Kartenseite</h1>
     <div class="col" v-for="user in users" :key="user.id">
       <div class="card-text">
-        <h5>{{ user.username }} on this page you will find all your main information. </h5>
-        <h5>You can always update your data with the button below. Pay attention on the tips on the sides of the page.</h5>
+        <h5>{{ user.username }} auf dieser Seite finden Sie alle wichtigen Informationen. </h5>
+        <h5>Sie können Ihre Daten jederzeit mit der Schaltfläche unten aktualisieren. Beachten Sie die Tipps an den Seiten der Seite.</h5>
       </div>
       <div class="row1">
         <div id="carouselExampleDark111" class="carousel carousel-dark slide" data-bs-ride="carousel">
