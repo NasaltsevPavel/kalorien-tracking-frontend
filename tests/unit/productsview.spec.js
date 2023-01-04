@@ -4,13 +4,14 @@ import ProductCreateForm from '@/components/ProductCreateForm'
 import ProductDeleteForm from '@/components/ProductDeleteForm'
 
 describe('Testing ProductsView.vue', () => {
-  it('should show page title', () => {
-    // when
-    const wrapper = mount(ProductsView)
-
-    // then
-    expect(wrapper.text()).toMatch('Welcome to Products')
-  })
+  it('should show page title',
+    () => {
+      // when
+      const wrapper = mount(ProductsView, { propsData: { language: 'en' } }
+      )
+      // then
+      expect(wrapper.text()).toMatch('Welcome to Products')
+    })
 
   it('should have product create form component', () => {
     // when
@@ -23,10 +24,10 @@ describe('Testing ProductsView.vue', () => {
 
   it('should have product delete form component', () => {
     // when
-    const wrapper = mount(ProductsView)
+    const wrapper = mount(ProductsView, { propsData: { language: 'en' } })
 
     // then
-    const createForm = wrapper.findComponent(ProductDeleteForm)
-    expect(createForm.exists()).toBeTruthy()
+    const deleteForm = wrapper.findComponent(ProductDeleteForm)
+    expect(deleteForm.exists()).toBeTruthy()
   })
 })
