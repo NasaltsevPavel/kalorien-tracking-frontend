@@ -1,6 +1,5 @@
 import { mount } from '@vue/test-utils'
 import ProductCreateForm from '@/components/ProductCreateForm'
-// import ProductsView from "@/views/ProductsView";
 
 describe('Testing ProductCreateForm.vue', () => {
   it('should not show form by default', () => {
