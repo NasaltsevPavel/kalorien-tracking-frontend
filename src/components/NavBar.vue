@@ -4,7 +4,6 @@
       <h1 class="brand">Kalorien</h1>
       <h1 class="brand2">Tracker</h1>
         <router-link class="nav-link" to="/">Home</router-link>
-        <router-link class="nav-link"  v-bind:language="language" :to="{name: 'faqs'}">FAQs</router-link>
         <router-link class="nav-link" v-bind:language="language" :to="{name: 'products'}">Products</router-link>
         <router-link class="nav-link"  v-bind:language="language" :to="{name: 'card'}">My card</router-link>
         <router-link class="nav-link"  v-bind:language="language" :to="{name: 'days'}">My days</router-link>
@@ -15,7 +14,6 @@
       <h1 class="brand">Kalorien</h1>
       <h1 class="brand2">Tracker</h1>
       <router-link class="nav-link" to="/">Home</router-link>
-      <router-link class="nav-link" to="/faqs">FAQs</router-link>
       <router-link class="nav-link" v-bind:language="language" :to="{name: 'products'}">Produkte</router-link>
       <router-link class="nav-link" v-bind:language="language"  :to="{name: 'card'}">Meine Karte</router-link>
       <router-link class="nav-link"  v-bind:language="language" :to="{name: 'days'}">Meine Tage</router-link>

@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 import StartView from '../views/StartView.vue'
 import ProductsView from '@/views/ProductsView'
 import CardView from '@/views/CardView'
-import FAQsView from '@/views/FAQsView'
 import DaysView from '@/views/DaysView'
 
 const routes = [
@@ -32,13 +31,6 @@ const routes = [
     props: true,
 
     component: DaysView
-  },
-  {
-    path: '/faqs',
-    name: 'faqs',
-    props: true,
-
-    component: FAQsView
   }
 ]
 

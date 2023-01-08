@@ -125,22 +125,22 @@
             <div class="carousel-item active" data-bs-interval="10000">
               <img src="../assets/products/meat.png" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>Some representative placeholder content for the first slide.</p>
+                <h5>Welches ist das beste Fleisch der Welt?</h5>
+                <p>Ziegenfleisch gilt als das gesündeste rote Fleisch, da es reich an Nährstoffen und Proteinen ist.</p>
               </div>
             </div>
             <div class="carousel-item" data-bs-interval="2000">
               <img src="../assets/products/fish.jpg" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <h5>Is Salmon Good for You?</h5>
-                <p>Salmon is one of the healthiest foods you can eat and a great source of protein.</p>
+                <h5>Ist Lachs gut für Sie?</h5>
+                <p>Lachs ist eines der gesündesten Lebensmittel, das Sie essen können, und eine großartige Proteinquelle.</p>
               </div>
             </div>
             <div class="carousel-item">
               <img src="../assets/products/VEGETABLES.jpg" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <h5>Eat plenty of fruit and veg</h5>
-                <p>They contain plenty of vitamins and minerals.</p>
+                <h5>Essen Sie viel Obst und Gemüse</h5>
+                <p>Sie enthalten viele Vitamine und Mineralstoffe.</p>
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark111" data-bs-slide="prev">
@@ -177,22 +177,22 @@
             <div class="carousel-item active" data-bs-interval="10000">
               <img src="../assets/products/unknown.jpg" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <h5>Do not skip breakfast</h5>
-                <p>Skipping breakfast will not help you lose weight.</p>
+                <h5>Lassen Sie das Frühstück nicht aus</h5>
+                <p>Wenn Sie das Frühstück auslassen, können Sie nicht abnehmen.</p>
               </div>
             </div>
             <div class="carousel-item" data-bs-interval="2000">
               <img src="../assets/products/meat.png" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <h5>Read food labels</h5>
-                <p>Knowing how to read food labels can help you choose healthier options.</p>
+                <h5>Lebensmitteletiketten lesen</h5>
+                <p>Wenn Sie wissen, wie man Lebensmitteletiketten liest, können Sie gesündere Optionen auswählen.</p>
               </div>
             </div>
             <div class="carousel-item">
               <img src="../assets/products/FRUIT.jpg" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <h5>Use a smaller plate</h5>
-                <p>Using smaller plates can help you eat smaller portions.</p>
+                <h5>Verwenden Sie einen kleineren Teller</h5>
+                <p>Die Verwendung kleinerer Teller kann Ihnen helfen, kleinere Portionen zu essen.</p>
               </div>
             </div>
           </div>
