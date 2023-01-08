@@ -4,7 +4,7 @@
     <div class="col" v-for="user in users" :key="user.id">
       <div class="card-text">
         <h5>{{ user.username }} on this page you will find all your main information. </h5>
-        <h5>You can always update your data with the button below. Pay attention on the tips on the sides of the page.</h5>
+        <h5>You can always update your data with the button below. Pay attention to the tips on the sides of the page.</h5>
       </div>
       <div class="row1">
         <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
@@ -17,7 +17,7 @@
             <div class="carousel-item active" data-bs-interval="10000">
               <img src="../assets/products/meat.png" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <h5>Which is the best meat in the world?</h5>
+                <h5>Which meat is the best in the world?</h5>
                 <p>Goat meat is considered the healthiest of red meats as a rich source of nutrients and including protein.</p>
               </div>
             </div>

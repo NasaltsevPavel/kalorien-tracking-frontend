@@ -8,8 +8,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-        <p>Enter the name of the product and number of calories in it, as well as select the appropriate type of your product
-          in order to create a new product.</p>
+        <p>Enter day, month and year of your day in order to create a new day.</p>
         <form class="row g-3 needs-validation" novalidate>
         <div class="input-group mb-2">
           <span class="input-group-text" id="day1">Day</span>
@@ -47,8 +46,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-        <p>Geben Sie den Namen des Produkts und die Anzahl der darin enthaltenen Kalorien ein und wählen Sie den entsprechenden Typ Ihres Produkts aus
-          um ein neues Produkt zu erstellen.</p>
+        <p>Geben Sie den Tag, den Monat und das Jahr Ihres Tages, um einen neuen Tag zu erstellen.</p>
         <form class="row g-3 needs-validation" novalidate>
         <div class="input-group mb-2">
           <span class="input-group-text" id="day">Tag</span>
